@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>XatSpace – Friends</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  height:100vh;
+  font-family:'Poppins',sans-serif;
+  background:radial-gradient(circle at top,#875151,#875151,#875151);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.friends-card{
+  width:420px;
+  height:520px;
+  border-radius:30px;
+  background:rgba(192,112,112,.95);
+  backdrop-filter:blur(20px);
+  box-shadow:0 15px 25px rgba(145,44,49,.55);
+  position:relative;
+  overflow:hidden;
+}
+
+.friends-card::before{
+  content:"";
+  position:absolute;
+  inset:14px;
+  border-radius:22px;
+  border:1.5px solid rgba(255,255,255,.75);
+  pointer-events:none;
+}
+
+.friends-title{
+  text-align:center;
+  margin-top:26px;
+  font-family:'Playfair Display',serif;
+  font-size:26px;
+  color:#f7d4d4;
+  letter-spacing:3px;
+}
+
+.friends-list{
+  margin:24px auto 0;
+  width:82%;
+  max-height:360px;
+  overflow-y:auto;
+  padding-right:6px;
+}
+
+.friends-list::-webkit-scrollbar{width:8px}
+
+.friends-list::-webkit-scrollbar-track{
+  background:rgba(255,200,210,.25);
+  border-radius:10px;
+}
+
+.friends-list::-webkit-scrollbar-thumb{
+  background:linear-gradient(180deg,#ffd6e1,#f4a8b8,#d17070);
+  border-radius:10px;
+  box-shadow:
+    inset 0 0 6px rgba(255,255,255,.6),
+    0 0 12px rgba(255,120,140,.6);
+}
+
+.friends-list::-webkit-scrollbar-thumb:hover{
+  background:linear-gradient(180deg,#ffe6ee,#f7b3c6,#e07a8a);
+}
+
+.friend-item{
+  background:rgba(247,168,168,.55);
+  backdrop-filter:blur(12px);
+  border-radius:18px;
+  padding:10px 14px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:12px;
+  box-shadow:0 4px 10px rgba(120,40,60,.25);
+}
+
+.friend-left{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.avatar{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  background:linear-gradient(145deg,#ffd6e1,#f4a8b8);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:600;
+  color:#9c2f42;
+}
+
+.friend-info{
+  line-height:1.1;
+}
+
+.friend-name{
+  font-size:14px;
+  color:#fdeef0;
+}
+
+.friend-id{
+  font-size:11px;
+  color:#fbd0d6;
+}
+
+.friend-btn{
+  padding:6px 14px;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.6);
+  background:linear-gradient(145deg,#ffd6e1,#f4a8b8);
+  font-size:11px;
+  color:#9c2f42;
+  cursor:pointer;
+  transition:.25s ease;
+}
+
+.friend-btn:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 20px rgba(255,170,180,.9);
+}
+
+.footer{
+  position:absolute;
+  bottom:18px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:9px;
+  color:#fdeef0aa;
+}
+
+
+html, body, a, div, span, p, img, button, input, textarea, select, * {
+    cursor: none !important;
+}
+
+#cursor-corazon {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999999;
+    transform: translate(-50%, -50%);
+}
+
+#cursor-corazon::before {
+    content: "❤";
+    font-size: 24px;
+    color: #fa999f;
+    text-shadow: 0 0 6px rgba(219, 87, 87, 0.6);
+}
+
+.corazon {
+    position: fixed;
+    pointer-events: none;
+    z-index: 2147483647;
+    font-size: 16px;
+    color: #fa999f;
+    animation: flotar 3.5s ease-out forwards;
+    text-shadow: 0 0 6px rgba(219, 87, 87, 0.6);
+}
+
+@keyframes flotar {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-120px) scale(1.5);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+<div id="cursor-corazon"></div>
+
+<div class="friends-card">
+  <div class="friends-title">♡ Friends ♡</div>
+
+<div class="friends-list">
+
+  <!-- FRIEND 1 -->
+  <div class="friend-item">
+    <div class="friend-left">
+      <div class="avatar">JF</div>
+      <div class="friend-info">
+        <div class="friend-name">Jefa</div>
+        <div class="friend-id">1231322223</div>
+      </div>
+    </div>
+
+    <a class="friend-btn" href="https://xat.me/1231322223" target="_blank">
+      XAT.ME
+    </a>
+  </div>
+
+  <!-- FRIEND 2 -->
+  <div class="friend-item">
+    <div class="friend-left">
+      <div class="avatar">SFR</div>
+      <div class="friend-info">
+        <div class="friend-name">Stiffer</div>
+        <div class="friend-id">344107857</div>
+      </div>
+    </div>
+
+    <a class="friend-btn" href="https://xat.me/344107857" target="_blank">
+      XAT.ME
+    </a>
+  </div>
+
+  <!-- FRIEND 3 -->
+  <div class="friend-item">
+    <div class="friend-left">
+      <div class="avatar">LND</div>
+      <div class="friend-info">
+        <div class="friend-name">Leonidas</div>
+        <div class="friend-id">1538488247</div>
+      </div>
+    </div>
+
+    <a class="friend-btn" href="https://xat.me/1538488247" target="_blank">
+      XAT.ME
+    </a>
+  </div>
+
+</div>
+
+
+</div>
+<script>
+  /* Bloquear clic derecho */
+document.addEventListener('contextmenu', function(e){
+  e.preventDefault();
+});
+
+/* Bloquear selección de texto */
+document.addEventListener('selectstart', function(e){
+  e.preventDefault();
+});
+
+/* Bloquear arrastrar imágenes/texto */
+document.addEventListener('dragstart', function(e){
+  e.preventDefault();
+});
+
+
+document.addEventListener("mousemove", function(e){
+
+    // cursor
+    const c = document.getElementById("cursor-corazon");
+    c.style.left = e.clientX + "px";
+    c.style.top  = e.clientY + "px";
+
+    // efecto corazón
+    const heart = document.createElement("div");
+    heart.className = "corazon";
+    heart.innerHTML = "❤";
+    heart.style.left = e.clientX + "px";
+    heart.style.top  = e.clientY + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 3500);
+});
+</script>
+</body>
+</html>
