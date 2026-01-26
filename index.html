@@ -912,6 +912,19 @@ html, body, a, div, span, p, img, button, input, textarea, select, * {
 }
 
 
+.name{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px; /* espacio entre nick y bandera */
+}
+
+.name .flag{
+  width:20px;
+  height:auto;
+  border-radius:3px;
+  box-shadow:0 0 6px rgba(255,255,255,.6);
+}
 
 </style>
 </head>
@@ -998,7 +1011,10 @@ html, body, a, div, span, p, img, button, input, textarea, select, * {
   </div>
 
   <!-- TEXTO -->
-  <div class="name">♥ 𝕯ᵉᶤ͟ᵃ͟ʰ ♥</div>
+<div class="name">
+  ♥ 𝕯ᵉᶤ͟ᵃ͟ʰ ♥
+  <img class="flag" src="https://flagcdn.com/w20/fr.png" alt="Francia">
+</div>
   <div class="subtitle">✧ Bienvenidos a mi xatspace ✧</div>
 
   <div class="bio" id="typingText">
